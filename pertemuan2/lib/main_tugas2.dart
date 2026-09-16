@@ -91,7 +91,7 @@ class GreetingWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Halo, Budi',
+              'Halo, Saskia',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
