@@ -14,13 +14,13 @@ class DashboardScreen extends StatelessWidget {
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
       ),
-      // Tombol mengambang (FAB) untuk tambah transaksi
+      // Tombol mengambang (FAB) untuk tambah transaksii
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
         child: const Icon(Icons.add),
         onPressed: () {
-          // NAVIGASI PUSH: Berpindah ke halaman Form
+          // NAVIGASI PUSH: Berpindah ke halaman Formm
           Navigator.push(
             context,
             MaterialPageRoute(
