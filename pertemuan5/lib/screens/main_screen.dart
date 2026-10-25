@@ -11,7 +11,14 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0; // Tab pertama aktif secara default (Beranda)
+  int _selectedIndex = 0;
+
+  // Halaman dibuat ulang saat tab dipindah, sehingga data selalu segar dari database
+  final List<Widget> _pages = const [
+    DashboardScreen(),
+    HistoryScreen(),
+    ProfileScreen(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -21,18 +28,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Mengambil email yang dikirim dari halaman login
-    final email = ModalRoute.of(context)?.settings.arguments as String? ?? 'tamu@email.com';
-
-    // List kumpulan halaman
-    final List<Widget> pages = [
-      DashboardScreen(email: email),
-      const HistoryScreen(),
-      ProfileScreen(email: email),
-    ];
-
     return Scaffold(
-      body: pages[_selectedIndex], // Ganti layar sesuai index
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

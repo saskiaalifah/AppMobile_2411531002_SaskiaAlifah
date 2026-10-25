@@ -1,4 +1,4 @@
-package com.example.pertemuan5
+package com.example.expense_tracker
 
 import io.flutter.embedding.android.FlutterActivity
 

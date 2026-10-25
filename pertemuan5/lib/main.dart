@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
-import 'main_screen.dart';
-import 'add_transaction_screen.dart';
+import 'screens/splash_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
+import 'screens/main_screen.dart';
+import 'screens/add_transaction_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -14,13 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Expense Tracker Final',
+      title: 'Expense Tracker',
       theme: ThemeData(primarySwatch: Colors.amber),
-      // MENGGUNAKAN NAMED ROUTES
-      initialRoute: '/login',
+      // NAMED ROUTES (Praktikum 5)
+      initialRoute: '/',
       routes: {
+        '/': (context) => const SplashScreen(),
         '/login': (context) => const LoginScreen(),
-        '/': (context) => const MainScreen(),
+        '/register': (context) => const RegisterScreen(),
+        '/main': (context) => const MainScreen(),
         '/add': (context) => const AddTransactionScreen(),
       },
     );
